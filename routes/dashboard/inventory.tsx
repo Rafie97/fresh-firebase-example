@@ -55,7 +55,7 @@ export default function InventoryPage() {
       newItem.name !== "Add a new item" &&
       newItem.price
     ) {
-      delete newItem.docID;
+      //   delete newItem.docID;
       //Update in firebase
       const db = firebase.firestore();
       const hebRef = db.collection("stores").doc("HEB").collection("items");
@@ -102,19 +102,19 @@ export default function InventoryPage() {
       <div>
         {cards && backSearches ? (
           backSearches.map((card) => (
-            <CustomCard
-              data={card}
+            <ItemCard
+              item={card}
               handleItemChange={handleItemChange}
-            ></CustomCard>
+            ></ItemCard>
           ))
         ) : (
           <p>Loading</p>
         )}
         {cards && backSearches ? (
-          <CustomCard
-            data={emptyCard}
+          <ItemCard
+            item={emptyCard}
             handleItemChange={handleItemChange}
-          ></CustomCard>
+          ></ItemCard>
         ) : (
           <p>Loading</p>
         )}

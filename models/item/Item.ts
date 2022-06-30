@@ -1,6 +1,6 @@
-import {Review} from './Review';
+import { Review } from "./Review";
 
-class Item {
+export default class Item {
   barcode: string;
   category?: string;
   docID: string;
@@ -16,7 +16,7 @@ class Item {
   isRecipe: boolean;
 
   constructor(doc) {
-    if (typeof doc.data === 'function') {
+    if (typeof doc.data === "function") {
       this.barcode = doc.data().barcode;
       this.category = doc.data().category;
       this.docID = doc.id;
@@ -48,22 +48,20 @@ class Item {
   }
 }
 
-export default Item;
-
 export function convertPriceHistory(firebasePriceHistory: {
   timestamp: number;
-}): Map<string, number> {
+}): Map<string, number> | undefined {
   let priceHist = new Map<string, number>();
   if (firebasePriceHistory) {
     Object.entries(firebasePriceHistory)
       .reverse()
-      .forEach(entry => {
+      .forEach((entry) => {
         const [key, value] = entry;
         priceHist.set(key, value);
       });
 
     return priceHist;
   } else {
-    return null;
+    return undefined;
   }
 }

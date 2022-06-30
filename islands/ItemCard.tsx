@@ -4,7 +4,7 @@ import Item from "../models/item/Item";
 
 type ItemCardProps = {
   item: Item;
-  handleItemChange: () => void;
+  handleItemChange: (newItem: Item) => Promise<void>;
 };
 
 function ItemCard({ item, handleItemChange }: ItemCardProps) {
