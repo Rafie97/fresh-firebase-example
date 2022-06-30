@@ -1,5 +1,5 @@
-import Item, {convertPriceHistory} from './Item';
-import {Review} from './Review';
+import Item, { convertPriceHistory } from "./Item.ts";
+import { Review } from "./Review.ts";
 export class Recipe implements Item {
   // Item
   barcode: string;
@@ -21,7 +21,7 @@ export class Recipe implements Item {
   items?: Item[];
 
   constructor(doc) {
-    if (typeof doc.data === 'function') {
+    if (typeof doc.data === "function") {
       this.barcode = doc.data().barcode;
       this.category = doc.data().category;
       this.docID = doc.id;

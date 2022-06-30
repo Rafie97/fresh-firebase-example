@@ -1,6 +1,6 @@
 import { useEffect, useState } from "preact";
 import firebase from "firebase";
-import Item from "../models/item/Item";
+import Item from "../models/item/Item.ts";
 
 type ItemCardProps = {
   item: Item;

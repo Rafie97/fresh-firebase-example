@@ -1,4 +1,4 @@
-import Coordinate from './Coordinate';
+import Coordinate from "./Coordinate.ts";
 
 export default interface Aisle {
   coordinate: Coordinate;

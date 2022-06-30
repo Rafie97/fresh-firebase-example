@@ -1,4 +1,4 @@
-import { Review } from "./Review";
+import { Review } from "./Review.ts";
 
 export default class Item {
   barcode: string;

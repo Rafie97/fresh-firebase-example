@@ -1,5 +1,5 @@
-import Receipt from '../CartModels/Receipt';
-import Item from '../ItemModels/Item';
+import Receipt from "../CartModels/Receipt.ts";
+import Item from "../ItemModels/Item.ts";
 
 export default interface User {
   id: string;

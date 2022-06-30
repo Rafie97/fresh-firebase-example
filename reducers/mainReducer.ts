@@ -1,5 +1,5 @@
-import { SET_PRODUCTS } from "./actions/actionTypes";
-import Item from "../models/item/Item";
+import { SET_PRODUCTS } from "./actions/actionTypes.ts";
+import Item from "../models/item/Item.ts";
 
 export type stateType = {
   products: Item[];
